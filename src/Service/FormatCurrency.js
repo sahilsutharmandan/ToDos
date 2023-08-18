@@ -3,6 +3,9 @@ export function formatCurrency(value, currencyCode = "USD") {
     style: "currency",
     currency: currencyCode,
   });
-
-  return formatter.format(value);
+  if (value) {
+    return formatter.format(value);
+  } else {
+    return formatter.format(0);
+  }
 }

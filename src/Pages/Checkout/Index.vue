@@ -100,9 +100,15 @@
         </div>
         <div class="p-6 border-t">
           <div class="flex gap-2">
-            <Input label="Discount" />
+            <Input
+              v-model="discount"
+              label="Discount"
+              placeholder="type 'sahil' for 10% discount"
+            />
             <div class="pt-0.5">
-              <button class="mt-5 btn btn-primary">Apply</button>
+              <button @click="calculateDiscount()" class="mt-5 btn btn-primary">
+                Apply
+              </button>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-5 mt-6">
@@ -110,9 +116,16 @@
             <p class="font-medium text-gray-800 text-end">
               {{ formatCurrency(calculateSubTotal) }}
             </p>
-            <p class="text-gray-500">Discount</p>
+            <p class="text-gray-500">
+              Discount
+              <span
+                v-if="discountCoupon"
+                class="px-2 py-.5 text-sm bg-gray-200 rounded-full text-medium"
+                >{{ discountCoupon }}</span
+              >
+            </p>
             <p class="font-medium text-gray-800 text-end">
-              -{{ formatCurrency(discount) }}
+              -{{ formatCurrency(discountedAmount) }}
             </p>
             <p class="text-gray-500">Taxes 5%</p>
             <p class="font-medium text-gray-800 text-end">
@@ -141,8 +154,10 @@ import { productsStore } from "@/stores/products";
 const useProductStore = productsStore();
 const cart = ref(useProductStore.cart);
 const email = ref("");
-const discount = ref(15);
+const discount = ref("");
+const discountedAmount = ref(0);
 const shipping = ref(5);
+const discountCoupon = ref("");
 
 const calculateSubTotal = computed(() => {
   let total = 0;
@@ -154,12 +169,21 @@ const calculateSubTotal = computed(() => {
 const calculateTaxes = computed(() => {
   return (calculateSubTotal.value * 5) / 100;
 });
+const calculateDiscount = () => {
+  if (discount.value === "sahil") {
+    discountedAmount.value = (calculateSubTotal.value * 10) / 100;
+    discountCoupon.value = "sahil";
+  } else {
+    discountedAmount.value = 0;
+    discountCoupon.value = "";
+  }
+};
 const calculateGrandTotal = computed(() => {
   return (
     calculateSubTotal.value +
     calculateTaxes.value +
     shipping.value -
-    discount.value
+    discountedAmount.value
   );
 });
 </script>

@@ -4,8 +4,7 @@
 
     <input
       class="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-sky-500 ring-0"
-      :name="name"
-      :id="name"
+      :id="id"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
@@ -26,6 +25,13 @@ const props = defineProps({
   },
   modelValue: {
     type: String,
+  },
+  placeholder: {
+    type: String,
+  },
+  type: {
+    type: String,
+    default: "text",
   },
 });
 </script>
