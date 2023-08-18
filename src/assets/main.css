@@ -1,0 +1,10 @@
+@import "./base.css";
+@import "./app.css";
+@import "@flaticon/flaticon-uicons/css/all/all.css";
+@import "@flaticon/flaticon-uicons/css/regular/all.css";
+
+/* flaticon css here  */
+
+.fi {
+  @apply flex;
+}
