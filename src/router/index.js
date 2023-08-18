@@ -10,7 +10,7 @@ const router = createRouter({
     {
       path: "/about",
       name: "About",
-      component: () => import("@/Pages/About/Index.vue"),
+      component: () => import("@/Pages/Dashboard1/Index.vue"),
     },
     {
       path: "/checkout",

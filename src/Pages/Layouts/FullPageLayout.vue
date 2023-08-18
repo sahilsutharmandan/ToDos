@@ -2,9 +2,10 @@
   <div class="mx-auto bg-white">
     <NavBar />
 
-    <div class="mx-auto max-w-7xl">
+    <div class="pb-6 mx-auto max-w-7xl">
       <slot> </slot>
     </div>
+    <Cart />
   </div>
 </template>
 

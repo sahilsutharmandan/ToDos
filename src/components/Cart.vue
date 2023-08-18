@@ -158,11 +158,7 @@
                       Shipping and taxes calculated at checkout.
                     </p>
                     <div class="mt-6">
-                      <a
-                        href="#"
-                        class="flex items-center justify-center px-6 py-2 text-base font-medium text-white duration-150 ease-linear delay-100 border border-transparent rounded-md shadow-sm bg-sky-500 hover:bg-white hover:border-sky-500 hover:text-sky-500"
-                        >Checkout</a
-                      >
+                      <a href="/checkout" class="btn btn-primary">Checkout</a>
                     </div>
                     <div
                       class="flex justify-center mt-6 text-sm text-center text-gray-500"
