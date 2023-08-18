@@ -11,7 +11,7 @@
       </div>
       <div class="flex items-end">
         <!-- <img class="h-64" src="@/assets/images/bags.png" alt="" /> -->
-        <img class="h-72" src="@/assets/images/cart.png" alt="" />
+        <!-- <img class="h-72" src="@/assets/images/cart.png" alt="" /> -->
       </div>
     </div>
     <div class="my-6">
