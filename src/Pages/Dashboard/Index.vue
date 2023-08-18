@@ -10,7 +10,7 @@
         <h1 class="text-4xl font-bold">All Products</h1>
       </div>
       <div class="flex items-end">
-        <img class="h-64" src="@/assets/images/bags.png" alt="" />
+        <!-- <img class="h-64" src="@/assets/images/bags.png" alt="" /> -->
         <img class="h-72" src="@/assets/images/cart.png" alt="" />
       </div>
     </div>
